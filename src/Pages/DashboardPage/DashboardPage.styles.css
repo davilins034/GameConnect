@@ -1,0 +1,227 @@
+/* Define as cores principais para facilitar */
+:root {
+  --background-color: #12121c; /* Fundo principal escuro */
+  --primary-color: #7b42f5;    /* Roxo principal */
+  --surface-color: #1e1e2c;    /* Cor das caixas e seções */
+  --text-color: #ffffff;
+  --text-secondary-color: #a9a9a9;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-container {
+  display: grid;
+  /* Define 3 colunas: 
+     A primeira tem 240px fixos.
+     A segunda (feed) ocupa o espaço que sobrar (1fr).
+     A terceira tem 300px fixos.
+  */
+  grid-template-columns: 240px 1fr 300px;
+  gap: 24px; /* Espaçamento entre as colunas */
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto; /* Centraliza o container na página */
+}
+
+/* Estilos básicos para vermos as colunas */
+.left-sidebar, .main-feed, .right-sidebar {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Adicione este código ao final do seu CSS */
+
+.left-sidebar {
+  background-color: transparent; /* A coluna em si não tem cor */
+  padding: 0;
+}
+
+.left-sidebar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  padding-left: 10px;
+}
+
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.categories-list li {
+  padding: 12px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.categories-list li:hover {
+  background-color: var(--surface-color);
+}
+
+.btn-create-post {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.user-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-nav a {
+  color: var(--text-secondary-color);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.user-nav a:hover {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+}
+
+/* Adicione este código ao final do seu CSS */
+
+/* --- Main Feed --- */
+.main-feed {
+  background-color: transparent;
+  padding: 0;
+}
+
+.create-post-box {
+  background-color: var(--surface-color);
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.create-post-box textarea {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  resize: vertical;
+  min-height: 60px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.create-post-box textarea:focus {
+  outline: none;
+}
+
+.create-post-box button {
+  align-self: flex-end; /* Alinha o botão à direita */
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post-item {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.post-votes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.post-votes span:first-child {
+  cursor: pointer;
+}
+
+.post-content h4 {
+  margin: 0 0 4px 0;
+}
+
+.post-content small {
+  color: var(--text-secondary-color);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.post-content p {
+  margin: 0;
+}
+
+/* --- Right Sidebar --- */
+.right-sidebar {
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.widget {
+  background-color: var(--surface-color);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.widget h4 {
+  margin: 0 0 12px 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px;
+}
+
+.widget ol {
+  padding-left: 20px;
+}
+
+.widget ol li {
+  margin-bottom: 8px;
+}
+
+.trending-item {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://image.api.playstation.com/vulcan/ap/rnd/202111/3013/cKZ4admm9B6ua_b1Qn1F4gFS.jpg') no-repeat center center/cover;
+  padding: 24px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Adicione no final do arquivo */
+
+.load-more-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--surface-color);
+  border: 1px solid #333;
+  color: var(--text-secondary-color);
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.load-more-btn:hover {
+  background-color: #2a2a3c;
+}

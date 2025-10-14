@@ -1,11 +1,10 @@
 // src/App.jsx
 
 import React from 'react';
-// 1. Importe também o Outlet
 import { Routes, Route, Outlet } from 'react-router-dom';
 import './App.css';
 
-// Componentes
+// --- SUAS IMPORTAÇÕES EXISTENTES ---
 import Cabeçalho from './components/Cabeçalho';
 import Hero from './components/Hero';
 import JogosPopulares from './components/JogosPopulares';
@@ -14,19 +13,23 @@ import Footer from './components/Footer';
 import LoginPage from './Pages/LoginPage/loginpage';
 import CadastroPage from './Pages/CadastroPage/cadastropage';
 
-// 2. Crie um componente de Layout que será compartilhado
+// --- ADICIONE ESTAS DUAS IMPORTAÇÕES ---
+import DashboardPage from './Pages/DashboardPage/DashboardPage.jsx';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+
+
+// Componente de Layout (sem alterações)
 const AppLayout = () => (
   <div className="App">
     <Cabeçalho />
     <main className="container">
-      {/* O Outlet renderizará o componente da rota filha aqui */}
       <Outlet /> 
     </main>
     <Footer />
   </div>
 );
 
-// 3. Crie um componente SÓ com o conteúdo da Home
+// Componente de Conteúdo da Home (sem alterações)
 const HomePageContent = () => (
   <>
     <Hero />
@@ -38,13 +41,19 @@ const HomePageContent = () => (
 function App() {
   return (
     <Routes>
-      {/* 4. Defina a rota "pai" que usa o Layout */}
+      {/* Rota "pai" que usa o Layout (sem alterações) */}
       <Route path="/" element={<AppLayout />}>
         
-        {/* 5. Defina as rotas "filhas" que serão renderizadas DENTRO do Outlet */}
-        <Route index element={<HomePageContent />} /> {/* 'index' significa que é a rota padrão para "/" */}
+        {/* Rotas públicas que já existiam */}
+        <Route index element={<HomePageContent />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="cadastro" element={<CadastroPage />} />
+        
+        {/* --- ADICIONE ESTE BLOCO DE ROTAS PROTEGIDAS AQUI DENTRO --- */}
+        <Route element={<ProtectedRoute />}>
+          {/* O path aqui é relativo ao pai ("/"), então "dashboard" vira "/dashboard" */}
+          <Route path="dashboard" element={<DashboardPage />} />
+        </Route>
         
       </Route>
 

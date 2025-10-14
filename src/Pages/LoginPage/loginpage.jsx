@@ -1,94 +1,70 @@
-// src/pages/LoginPage/LoginPage.jsx
+// src/Pages/LoginPage/loginpage.jsx
+
 import React from 'react';
-import { 
-  LoginPageContainer, 
-  Header, 
-  AppLogo, 
-  LoginCard, 
-  Title, 
-  Form, 
-  Input, 
-  MainButton, 
-  GoogleButton, 
-  SteamButton, 
-  DiscordButton, 
-  Separator, 
-  LinkText 
-} from './loginpage.styles'; 
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext.jsx';
 
-const LoginPage = () => {
-    
-    // Função para lidar com o envio do formulário de login padrão
-    const handleEmailLogin = (e) => {
-        e.preventDefault();
-        // **AQUI ENTRA A LÓGICA DE AUTENTICAÇÃO POR EMAIL/SENHA**
-        console.log("Tentativa de Login com Email e Senha");
-        // Exemplo: chamar uma API de autenticação
-    }
+// 1. Importe os componentes estilizados que você criou!
+import {
+  LoginPageContainer,
+  LoginCard,
+  Title,
+  Form,
+  Input,
+  MainButton,
+  Separator,
+  LinkText,
+  DiscordButton,
+  GoogleButton,
+  SteamButton,
+  Header,
+  AppLogo
+} from './LoginPage.styles.js'; // Garanta que o caminho está correto
 
-    // Funções de exemplo para os botões sociais
-    const handleSocialLogin = (platform) => {
-        // **AQUI ENTRA A LÓGICA DE REDIRECIONAMENTO/POP-UP DE AUTENTICAÇÃO SOCIAL**
-        console.log(`Iniciando login com ${platform}`);
-    }
+function LoginPage() {
+  const navigate = useNavigate();
+  const auth = useAuth();
 
-    return (
-        // O Header simples é incluído aqui, conforme a imagem, 
-        // mas você pode substituí-lo pelo seu componente Cabeçalho.jsx 
-        // se ele for genérico o suficiente.
+  const handleLoginSubmit = (event) => {
+     console.log("FUNÇÃO handleLoginSubmit FOI CHAMADA!");
+    event.preventDefault();
+    auth.login();
+    navigate('/dashboard');
+  };
+
+  return (
+    // 2. Substitua o HTML antigo pelos seus novos componentes
+    <LoginPageContainer>
+      <Header>
+        <AppLogo>GAMECONNECT</AppLogo>
+      </Header>
+
+      <LoginCard>
+        <Title>Bem-vindo de volta!</Title>
         
-        <LoginPageContainer>
-            <Header>
-                <AppLogo>GAMECONNECT</AppLogo>
-            </Header>
+        <Form onSubmit={handleLoginSubmit}>
+          <Input type="email" required placeholder="Email" />
+          <Input type="password" required placeholder="Senha" />
+          <MainButton type="submit">Entrar</MainButton>
+        </Form>
 
-            <LoginCard>
-                <Title>Login</Title>
-                
-                <Form onSubmit={handleEmailLogin}>
-                    <Input 
-                        type="email" 
-                        placeholder="Email" 
-                        required 
-                    />
-                    <Input 
-                        type="password" 
-                        placeholder="Senha" 
-                        required 
-                    />
-                    
-                    <MainButton type="submit">
-                        Entrar
-                    </MainButton>
-                </Form>
+        <LinkText onClick={() => alert('Funcionalidade a ser implementada!')}>
+          Esqueceu sua senha?
+        </LinkText>
 
-                <Separator>ou entre com</Separator>
-
-                {/* Botões Sociais */}
-                <GoogleButton onClick={() => handleSocialLogin('Google')}>
-                    Login com Google
-                </GoogleButton>
-                
-                <SteamButton onClick={() => handleSocialLogin('Steam')}>
-                    Login com Steam
-                </SteamButton>
-                
-                <DiscordButton onClick={() => handleSocialLogin('Discord')}>
-                    Login com Discord
-                </DiscordButton>
-
-                <LinkText 
-                    href="/cadastro" 
-                    onClick={(e) => {
-                        e.preventDefault(); 
-                        console.log('Navegar para Criar Conta');
-                        // Use o useNavigate do react-router-dom para navegação
-                    }}>
-                    Criar conta
-                </LinkText>
-            </LoginCard>
-        </LoginPageContainer>
-    );
+        <Separator>OU</Separator>
+        
+        {/* Adicionando os botões sociais para um visual completo */}
+        <DiscordButton>Continuar com Discord</DiscordButton>
+        <GoogleButton>Continuar com Google</GoogleButton>
+        <SteamButton>Continuar com Steam</SteamButton>
+        
+        <LinkText onClick={() => navigate('/cadastro')}>
+          Não tem uma conta? Cadastre-se
+        </LinkText>
+      </LoginCard>
+    </LoginPageContainer>
+  );
 }
 
 export default LoginPage;
