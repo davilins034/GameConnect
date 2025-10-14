@@ -1,5 +1,5 @@
 import React from 'react';
-import logoGameConnect from '../assets/Logo GAME CONNECT.svg'; // Note o caminho do import
+import logoGameConnect from '../assets/Logo GAME CONNECT.svg';
 
 function Hero() {
   return (

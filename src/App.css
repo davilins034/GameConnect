@@ -1,4 +1,4 @@
-/* Estilos base */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -52,7 +52,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-/* MELHORIA: EFEITO HOVER NOS BOTÕES */
+
 .btn-primary {
   background-color: #8b5cf6;
   color: white;
@@ -98,7 +98,7 @@ body {
   margin-top: 60px;
 }
 
-/* MELHORIA: TÍTULOS DE SEÇÃO */
+
 .popular-games h3, .recent-posts h3 {
   text-align: center;
   font-size: 1.9rem;
@@ -125,7 +125,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* MELHORIA: EFEITO HOVER NOS CARDS DE JOGO */
+
 .game-card:hover img {
   transform: scale(1.05);
 }
@@ -145,7 +145,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-/* MELHORIA: EFEITO HOVER NOS POSTS */
+
 .post-item:hover {
   background-color: #2a0b68;
   border-left-color: #a855f7;

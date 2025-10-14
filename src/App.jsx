@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-// Importando os novos componentes
+// imports dos componentes
 import Cabeçalho from './components/Cabeçalho';
 import Hero from './components/Hero';
 import JogosPopulares from './components/JogosPopulares';
