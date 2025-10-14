@@ -1,38 +1,29 @@
-/* === BOTÕES GLOBAIS === */
-.btn {
-  border: none;
-  padding: 10px 24px;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: all 0.3s ease;
+/* Estilos base */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #12012e;
+  color: #f0f0f0;
 }
 
-.btn-primary {
-  background-color: var(--color-accent);
-  color: var(--color-text-light);
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--color-text-light);
-  border: 1px solid var(--color-accent);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-accent);
-}
-
-/* === HEADER === */
 .header {
-  background-color: var(--color-primary);
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #3a1e5a;
+  background-color: #1a0245;
+  padding: 15px 0;
+  border-bottom: 1px solid #3c0ba0;
 }
 
 .header-container {
@@ -42,118 +33,129 @@
 }
 
 .logo-text {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  letter-spacing: 2px;
-  color: var(--color-text-light);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #a855f7;
 }
 
-.header-nav {
-  display: flex;
-  gap: 1rem;
+.header-nav .btn {
+  margin-left: 10px;
 }
 
-/* === HERO SECTION === */
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* MELHORIA: EFEITO HOVER NOS BOTÕES */
+.btn-primary {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #8b5cf6;
+}
+
+.btn-secondary:hover {
+  background-color: #8b5cf6;
+  color: white;
+}
+
 .hero-section {
-  background-color: var(--color-primary);
-  margin-top: 2rem;
-  padding: 2.5rem;
-  border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 40px;
+  padding: 60px 0;
+  background-color: #1f0352;
+  border-radius: 8px;
+  margin-top: 40px;
+  padding: 40px;
 }
 
 .hero-logo img {
-  width: 180px;
-  height: auto;
+  max-width: 150px;
 }
 
 .hero-content h2 {
-  font-family: var(--font-display);
-  font-size: 2.25rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  max-width: 500px;
+  font-size: 2rem;
+  margin-top: 0;
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 1.5rem;
-  max-width: 500px;
-}
-
-/* === SEÇÕES (JOGOS E POSTS) === */
 .popular-games, .recent-posts {
-  margin-top: 3rem;
+  margin-top: 60px;
 }
 
+/* MELHORIA: TÍTULOS DE SEÇÃO */
 .popular-games h3, .recent-posts h3 {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #3c0ba0;
 }
 
-.text-highlight {
-  font-weight: 400;
-  color: var(--color-text-dark);
-}
-
-/* === JOGOS POPULARES === */
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .game-card {
-  border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.game-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
 }
 
 .game-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+  transition: transform 0.3s ease;
 }
 
-/* === POSTS RECENTES === */
+/* MELHORIA: EFEITO HOVER NOS CARDS DE JOGO */
+.game-card:hover img {
+  transform: scale(1.05);
+}
+
 .posts-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 15px;
 }
 
 .post-item {
-  background-color: var(--color-primary);
-  padding: 1.25rem 1.5rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.post-item:hover {
-  background-color: #2c0b4d;
+  background-color: #1f0352;
+  padding: 20px;
+  border-radius: 6px;
+  border-left: 3px solid #8b5cf6;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.post-item p {
-  color: var(--color-text-secondary);
+/* MELHORIA: EFEITO HOVER NOS POSTS */
+.post-item:hover {
+  background-color: #2a0b68;
+  border-left-color: #a855f7;
+  transform: translateX(5px);
 }
 
-/* === FOOTER === */
 .footer {
   text-align: center;
-  padding: 2rem 0;
-  margin-top: 3rem;
-  color: var(--color-text-dark);
-  font-size: 0.9rem;
-  border-top: 1px solid #3a1e5a;
+  margin-top: 60px;
+  padding: 20px 0;
+  color: #a0aec0;
+  border-top: 1px solid #3c0ba0;
 }
