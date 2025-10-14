@@ -1,0 +1,39 @@
+/* Importa as fontes do Google Fonts definidas no index.html */
+:root {
+  /* Paleta de Cores */
+  --color-background: #10001F; /* Roxo bem escuro de fundo */
+  --color-primary: #21033D; /* Roxo para os cards e seções */
+  --color-accent: #7B00D9; /* Roxo vibrante para botões e destaques */
+  --color-accent-hover: #9126e8; /* Variação do accent para hover */
+  --color-text-light: #FFFFFF;
+  --color-text-secondary: #C0B7CE; /* Texto secundário, como subtítulos */
+  --color-text-dark: #A09BA8;
+
+  /* Tipografia */
+  --font-display: 'Oswald', sans-serif; /* Para títulos grandes e logo */
+  --font-body: 'Montserrat', sans-serif; /* Para o corpo do texto */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
