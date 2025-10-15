@@ -1,8 +1,8 @@
-/* Define as cores principais para facilitar */
+
 :root {
-  --background-color: #12121c; /* Fundo principal escuro */
-  --primary-color: #7b42f5;    /* Roxo principal */
-  --surface-color: #1e1e2c;    /* Cor das caixas e seções */
+  --background-color: #12121c; 
+  --primary-color: #7b42f5;    
+  --surface-color: #1e1e2c;    
   --text-color: #ffffff;
   --text-secondary-color: #a9a9a9;
 }
@@ -15,29 +15,25 @@ body {
 
 .dashboard-container {
   display: grid;
-  /* Define 3 colunas: 
-     A primeira tem 240px fixos.
-     A segunda (feed) ocupa o espaço que sobrar (1fr).
-     A terceira tem 300px fixos.
-  */
+  
   grid-template-columns: 240px 1fr 300px;
-  gap: 24px; /* Espaçamento entre as colunas */
+  gap: 24px; 
   padding: 20px;
   max-width: 1400px;
-  margin: 0 auto; /* Centraliza o container na página */
+  margin: 0 auto; 
 }
 
-/* Estilos básicos para vermos as colunas */
+
 .left-sidebar, .main-feed, .right-sidebar {
   background-color: var(--surface-color);
   border-radius: 8px;
   padding: 16px;
 }
 
-/* Adicione este código ao final do seu CSS */
+
 
 .left-sidebar {
-  background-color: transparent; /* A coluna em si não tem cor */
+  background-color: transparent; 
   padding: 0;
 }
 
@@ -96,9 +92,9 @@ body {
   color: var(--text-color);
 }
 
-/* Adicione este código ao final do seu CSS */
 
-/* --- Main Feed --- */
+
+/*  Main Feed  */
 .main-feed {
   background-color: transparent;
   padding: 0;
@@ -128,7 +124,7 @@ body {
 }
 
 .create-post-box button {
-  align-self: flex-end; /* Alinha o botão à direita */
+  align-self: flex-end; 
   background-color: var(--primary-color);
   color: var(--text-color);
   border: none;
@@ -172,7 +168,7 @@ body {
   margin: 0;
 }
 
-/* --- Right Sidebar --- */
+/*  Right Sidebar  */
 .right-sidebar {
   background-color: transparent;
   padding: 0;
@@ -208,7 +204,7 @@ body {
   font-weight: bold;
 }
 
-/* Adicione no final do arquivo */
+
 
 .load-more-btn {
   width: 100%;

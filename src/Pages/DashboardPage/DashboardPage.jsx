@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DashboardPage.styles.css';
 
-// 1. Importe os componentes que acabamos de criar
+
 import LeftSidebar from '../../components/Dashboard/LeftSidebar';
 import MainFeed from '../../components/Dashboard/MainFeed';
 import RightSidebar from '../../components/Dashboard/RightSidebar';
@@ -41,7 +41,7 @@ function DashboardPage() {
   const [posts, setPosts] = useState(initialPosts);
 
   return (
-    // 2. O JSX agora é muito mais limpo!
+    
     <div className="dashboard-container">
       <LeftSidebar />
       <MainFeed posts={posts} />

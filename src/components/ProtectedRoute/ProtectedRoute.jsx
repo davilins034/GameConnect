@@ -1,13 +1,13 @@
-// src/components/ProtectedRoute/ProtectedRoute.jsx
+
 
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext.jsx'; // Importe o hook de autenticação
+import { useAuth } from '../../context/AuthContext.jsx'; 
 
 function ProtectedRoute() {
   const { isAuthenticated } = useAuth(); // Pega o estado de autenticação do contexto
 
-  // A lógica do "segurança":
+  
   if (!isAuthenticated) {
     // Se o usuário NÃO estiver autenticado, redireciona para a página de login.
     // O 'replace' impede que o usuário use o botão "voltar" do navegador para acessar a página protegida.

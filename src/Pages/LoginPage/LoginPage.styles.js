@@ -1,9 +1,7 @@
-// src/pages/LoginPage/LoginPage.styles.js
+
 import styled, { css } from 'styled-components';
 
-// ===================================================
-// Definição de Cores
-// Use constantes ou variáveis CSS (já definidas em index.css)
+
 const purple = '#8a2be2';
 const magenta = '#ff00ff';
 const cardBg = '#1c1c2a';
@@ -11,10 +9,10 @@ const textLight = '#ffffff';
 const textSecondary = '#aaaaaa';
 const buttonDiscord = '#5865f2';
 const bgDark = '#0f0f1a';
-const gradient = 'linear-gradient(90deg, #9933ff, #00bfff)'; // Roxo para Ciano
+const gradient = 'linear-gradient(90deg, #9933ff, #00bfff)'; 
 
-// ===================================================
-// Layout Principal e Card
+
+ // Layout Principal e Card
 export const LoginPageContainer = styled.div`
   /* Ocupa toda a tela, garantindo que o conteúdo esteja centralizado */
   display: flex;
@@ -68,7 +66,7 @@ export const Title = styled.h2`
   font-weight: 500;
 `;
 
-// ===================================================
+
 // Elementos de Formulário
 
 export const Form = styled.form`
@@ -97,7 +95,7 @@ export const Input = styled.input`
   }
 `;
 
-// ===================================================
+
 // Botões
 
 const CommonButtonStyles = css`
@@ -167,7 +165,7 @@ export const DiscordButton = styled(SocialButtonBase)`
   }
 `;
 
-// ===================================================
+
 // Outros Elementos
 
 export const Separator = styled.div`

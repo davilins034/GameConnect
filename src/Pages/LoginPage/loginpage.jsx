@@ -1,10 +1,10 @@
-// src/Pages/LoginPage/loginpage.jsx
+
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
 
-// 1. Importe os componentes estilizados que você criou!
+
 import {
   LoginPageContainer,
   LoginCard,
@@ -19,7 +19,7 @@ import {
   SteamButton,
   Header,
   AppLogo
-} from './LoginPage.styles.js'; // Garanta que o caminho está correto
+} from './LoginPage.styles.js'; 
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ function LoginPage() {
   };
 
   return (
-    // 2. Substitua o HTML antigo pelos seus novos componentes
+    
     <LoginPageContainer>
       <Header>
         <AppLogo>GAMECONNECT</AppLogo>
@@ -53,8 +53,7 @@ function LoginPage() {
         </LinkText>
 
         <Separator>OU</Separator>
-        
-        {/* Adicionando os botões sociais para um visual completo */}
+
         <DiscordButton>Continuar com Discord</DiscordButton>
         <GoogleButton>Continuar com Google</GoogleButton>
         <SteamButton>Continuar com Steam</SteamButton>

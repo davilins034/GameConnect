@@ -1,5 +1,5 @@
 import React from 'react';
-import PostItem from './PostItem'; // 1. Importe o novo componente
+import PostItem from './PostItem'; 
 
 function MainFeed({ posts }) {
   return (
@@ -9,7 +9,7 @@ function MainFeed({ posts }) {
         <button>Postar</button>
       </div>
 
-      {/* 2. Agora o map renderiza o componente PostItem para cada post */}
+      
       {posts.map(post => (
         <PostItem key={post.id} post={post} />
       ))}
